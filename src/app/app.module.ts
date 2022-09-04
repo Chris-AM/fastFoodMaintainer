@@ -19,6 +19,7 @@ import { RegisterComponent } from './auth/register/register.component';
 import { BreadcrumbsComponent } from './components/shared/breadcrumbs/breadcrumbs.component';
 import { SidebarComponent } from './components/shared/sidebar/sidebar.component';
 import { HeaderComponent } from './components/shared/header/header.component';
+import { PagesComponent } from './components/pages/pages.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { HeaderComponent } from './components/shared/header/header.component';
     RegisterComponent,
     BreadcrumbsComponent,
     SidebarComponent,
-    HeaderComponent
+    HeaderComponent,
+    PagesComponent
   ],
   imports: [
     FormsModule,
