@@ -6,29 +6,35 @@ import { AppRoutingModule } from './app-routing.module';
 
 
 import { AppComponent } from './app.component';
-import { NavbarComponent } from './components/shared/navbar/navbar.component';
-import { HomeComponent } from './components/home/home.component';
-import { FooterComponent } from './components/shared/footer/footer.component';
-import { IngredientComponent } from './components/ingredient/ingredient.component';
-import { ProductComponent } from './components/product/product.component';
-import { MenuComponent } from './components/menu/menu.component';
-import { OrderComponent } from './components/order/order.component';
-import { DailySalesComponent } from './components/daily-sales/daily-sales.component';
-import { UsersComponent } from './components/users/users.component';
+import { DashboardComponent } from './components/pages/dashboard/dashboard.component';
+import { IngredientComponent } from './components/pages/ingredient/ingredient.component';
+import { ProductComponent } from './components/pages/product/product.component';
+import { MenuComponent } from './components/pages/menu/menu.component';
+import { OrderComponent } from './components/pages/order/order.component';
+import { DailySalesComponent } from './components/pages/daily-sales/daily-sales.component';
+import { UsersComponent } from './components/pages/users/users.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { LoginComponent } from './auth/login/login.component';
+import { RegisterComponent } from './auth/register/register.component';
+import { BreadcrumbsComponent } from './components/shared/breadcrumbs/breadcrumbs.component';
+import { SidebarComponent } from './components/shared/sidebar/sidebar.component';
+import { HeaderComponent } from './components/shared/header/header.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent,
-    HomeComponent,
-    FooterComponent,
+    DashboardComponent,
     IngredientComponent,
     ProductComponent,
     MenuComponent,
     OrderComponent,
     DailySalesComponent,
-    UsersComponent
+    UsersComponent,
+    LoginComponent,
+    RegisterComponent,
+    BreadcrumbsComponent,
+    SidebarComponent,
+    HeaderComponent
   ],
   imports: [
     FormsModule,
