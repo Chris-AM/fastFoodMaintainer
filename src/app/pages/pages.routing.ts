@@ -11,12 +11,10 @@ import { UsersComponent } from './users/users.component';
 
 const routes: Routes = [
   {
-    path: '',
+    path: 'dashboard',
     component: PagesComponent,
     children: [
-      { path: 'home', component: DashboardComponent },
-      { path: '', redirectTo: '/home', pathMatch: 'full' },
-      { path: '**', pathMatch: 'full', redirectTo: 'home' },
+      { path: '', component: DashboardComponent },
       { path: 'daily-sales', component: DailySalesComponent },
       { path: 'ingredients', component: IngredientComponent },
       { path: 'menu', component: MenuComponent },
