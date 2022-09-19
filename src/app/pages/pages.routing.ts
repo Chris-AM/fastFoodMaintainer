@@ -19,9 +19,9 @@ const routes: Routes = [
       { path: '', component: DashboardComponent },
       { path: 'daily-sales', component: DailySalesComponent },
       { path: 'ingredients', component: IngredientComponent },
-      { path: 'menu', component: MenuComponent },
-      { path: 'order', component: OrderComponent },
-      { path: 'product', component: ProductComponent },
+      { path: 'menus', component: MenuComponent },
+      { path: 'orders', component: OrderComponent },
+      { path: 'products', component: ProductComponent },
       { path: 'users', component: UsersComponent },
       { path: 'test', component: TestComponent },
       { path: 'account-settings', component: AccountSettingsComponent }
