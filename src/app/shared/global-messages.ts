@@ -8,4 +8,8 @@ export const MESSAGES = {
     SALES: 'Ventas/Cierre',
     USERS: 'Administrar Usuarios'
   },
+  DAILY_SALES: {
+    TODAY_SALES: 'Ventas del día de hoy',
+    DAY_CLOSURE: 'Cierre del día',
+  },
 }
