@@ -4,6 +4,8 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 
+import { NgChartsModule } from 'ng2-charts';
+
 //own_modules
 import { SharedModule } from '../shared/shared.module';
 import { ComponentsModule } from '../components/components.module';
@@ -17,6 +19,7 @@ import { DailySalesComponent } from './daily-sales/daily-sales.component';
 import { UsersComponent } from './users/users.component';
 import { PagesComponent } from './pages.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { TestComponent } from './hidden/test.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +31,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     UsersComponent,
     PagesComponent,
     DashboardComponent,
+    TestComponent,
   ],
   exports: [
     IngredientComponent,
@@ -44,7 +48,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     CommonModule,
     SharedModule,
     FormsModule,
-    ComponentsModule
+    ComponentsModule,
+    NgChartsModule
   ],
 })
 export class PagesModule {}

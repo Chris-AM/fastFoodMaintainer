@@ -1,0 +1,58 @@
+<div class="row">
+  <div class="col-12">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title">
+          Striped Progress bar
+        </h4>
+        <div class="progress m-t-20">
+          <div class="progress-bar
+                bg-primary
+                progress-bar-striped
+                active"
+                [style.width]="getProduct1"
+                style="height:10px;"
+                role="progressbar">
+          </div>
+        </div>
+
+        <div class="progress m-t-20">
+          <div class="progress-bar
+                bg-info
+                progress-bar-striped
+                active"
+                style="height:10px;"
+                [style.width]="getProduct2"
+                role="progressbar">
+            <span class="sr-only">85% Complete
+              (success)
+            </span>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-6">
+    <div class="card">
+      <div class="card-body">
+        <app-increaser (increaser)="product1 = $event"
+                        [increaser]="product1">
+        </app-increaser>
+      </div>
+    </div>
+  </div>
+  <div class="col-6">
+    <div class="card">
+      <div class="card-body">
+        <app-increaser (increaser)="product2 = $event"
+                        [increaser]="product2"
+                        [btnClass]="'btn-info'">
+        </app-increaser>
+      </div>
+    </div>
+  </div>
+</div>

@@ -7,6 +7,7 @@ import { MenuComponent } from './menu/menu.component';
 import { OrderComponent } from './order/order.component';
 import { PagesComponent } from './pages.component';
 import { ProductComponent } from './product/product.component';
+import {TestComponent} from './hidden/test.component';
 import { UsersComponent } from './users/users.component';
 
 const routes: Routes = [
@@ -21,6 +22,7 @@ const routes: Routes = [
       { path: 'order', component: OrderComponent },
       { path: 'product', component: ProductComponent },
       { path: 'users', component: UsersComponent },
+      { path: 'test', component: TestComponent },
     ],
   },
 ];
