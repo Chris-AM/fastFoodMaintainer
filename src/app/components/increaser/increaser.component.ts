@@ -14,15 +14,16 @@ export class IncreaserComponent implements OnInit {
 
   constructor() { }
 
+  
+  @Input('increaser') progress: number = 50;
+  @Output('increaser') increasedValue: EventEmitter<number> = new EventEmitter();
+  
+  @Input() btnClass: string = 'btn-primary';
+  
   ngOnInit() {
     this.btnClass = `btn ${this.btnClass}`;
   }
-
-  @Input('increaser') progress: number = 50;
-  @Output('increaser') increasedValue: EventEmitter<number> = new EventEmitter();
-
-  @Input() btnClass: string = 'btn-primary';
-
+  
   updateProgress(value: number) {
     if(this.progress >= 100 && value >= 0) {
       this.increasedValue.emit(100);
