@@ -12,4 +12,7 @@ export const MESSAGES = {
     TODAY_SALES: 'Ventas del día de hoy',
     DAY_CLOSURE: 'Cierre del día',
   },
+  ACCOUNT_SETTINGS: {
+    SELECT: 'Seleccione un tema',
+  },
 }

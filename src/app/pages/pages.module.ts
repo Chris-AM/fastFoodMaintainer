@@ -20,6 +20,7 @@ import { UsersComponent } from './users/users.component';
 import { PagesComponent } from './pages.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { TestComponent } from './hidden/test.component';
+import { AccountSettingsComponent } from './account-settings/account-settings.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { TestComponent } from './hidden/test.component';
     PagesComponent,
     DashboardComponent,
     TestComponent,
+    AccountSettingsComponent,
   ],
   exports: [
     IngredientComponent,
@@ -42,6 +44,7 @@ import { TestComponent } from './hidden/test.component';
     UsersComponent,
     PagesComponent,
     DashboardComponent,
+    AccountSettingsComponent,
   ],
   imports: [
     RouterModule,
