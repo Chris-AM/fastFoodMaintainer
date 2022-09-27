@@ -16,7 +16,7 @@ export class SidebarService {
         { title: 'Menus', url: 'menus' },
         { title: 'Ordenes', url: 'orders' },
         { title: 'Administrar Usuarios', url: 'users' },
-        { title: '', url: 'daily-sales' },
+        { title: 'Ventas Diarias', url: 'daily-sales' },
       ],
     }
   ];
