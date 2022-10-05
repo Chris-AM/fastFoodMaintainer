@@ -41,6 +41,20 @@
                 </div>
                 <div class="form-group ">
                     <div class="col-xs-12">
+                        <span style="display: flex;">
+                            <p style="margin: 16px;">
+                                +569
+                            </p> 
+                            <input class="form-control"
+                            type="text"
+                            required=""
+                            placeholder="Phone"
+                            formControlName="phone">
+                        </span>
+                    </div>
+                </div>
+                <div class="form-group ">
+                    <div class="col-xs-12">
                         <input class="form-control"
                                 type="password"
                                 required=""
@@ -73,19 +87,22 @@
                     <div class="col text-danger">
                         <ul>
                             <li *ngIf="formValidation('name')">
-                              Name is mandatory
+                                Name is mandatory
                             </li>
                             <li *ngIf="formValidation('email')">
-                              email is mandatory
+                                email is mandatory and must be valid
+                            </li>
+                            <li *ngIf="formValidation('phone')">
+                                Phone Number mustbe maxlength 8, +569 prev added
                             </li>
                             <li *ngIf="formValidation('password')">
-                              Password should be min 4 max 16
+                                Password should be min 4 max 16
                             </li>
                             <li *ngIf="passwordValidator()">
-                              Passwords must be the equal
+                                Passwords must be the equal
                             </li>
                             <li *ngIf="acceptTerms()">
-                              You must agree with our terms
+                                You must agree with our terms
                             </li>
                         </ul>
                     </div>
@@ -93,9 +110,9 @@
                 <div class="form-group text-center m-t-20">
                     <div class="col-xs-12">
                         <button class="btn btn-info btn-lg btn-block
-                                      text-uppercase waves-effect waves-light"
+                                        text-uppercase waves-effect waves-light"
                                 type="submit">
-                          Sign Up
+                            Sign Up
                         </button>
                     </div>
                 </div>
