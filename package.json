@@ -29,6 +29,7 @@
     "lodash": "^4.17.21",
     "ng2-charts": "^4.0.1",
     "rxjs": "~7.5.6",
+    "sweetalert2": "^11.4.37",
     "tslib": "^2.4.0",
     "zone.js": "~0.11.8"
   },
@@ -38,7 +39,7 @@
     "@angular/compiler-cli": "^14.2.3",
     "@types/jasmine": "~4.3.0",
     "@types/lodash": "^4.14.185",
-    "electron": "^20.2.0",
+    "electron": "^21.1.0",
     "jasmine-core": "~4.4.0",
     "karma": "~6.4.1",
     "karma-chrome-launcher": "~3.1.1",
