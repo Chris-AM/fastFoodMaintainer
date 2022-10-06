@@ -17,8 +17,10 @@ import { AuthService } from '../auth.service';
 export class LoginComponent implements OnInit {
 
   public loginForm = new FormGroup({
-    email: new FormControl('c.aranguizm@outlook.com', [Validators.email]),
-    password: new FormControl('1704', [
+    email: new FormControl(
+      localStorage.getItem('email') || '',
+      [Validators.email]),
+    password: new FormControl('', [
       Validators.required,
       Validators.minLength(4),
       Validators.maxLength(16)
@@ -36,8 +38,14 @@ export class LoginComponent implements OnInit {
 
   login(){
     this.authService.login(this.loginForm.value).subscribe({
-      next: (data) => console.log(data),
-      error: (err) => Swal.fire('error', err.error.error, 'error'),
+      next: (data: any) => {
+        if (this.loginForm.get('remember').value) {
+          localStorage.setItem('email', data.user.email);
+        } else {
+          localStorage.removeItem('email');
+        }
+      },
+      error: (err:any) => Swal.fire('error', err.error.error, 'error'),
     });
   }
 }
