@@ -7,6 +7,8 @@
     <div class="login-box card">
         <div class="card-body">
             <form class="form-horizontal form-material"
+                    autocomplete="off"
+                    [formGroup]="loginForm"
                     (submit)="login()"
                     id="loginform">
                 <a href="javascript:void(0)"
@@ -20,9 +22,11 @@
                 <div class="form-group m-t-40">
                     <div class="col-xs-12">
                         <input class="form-control"
-                        type="text"
+                        type="email"
                         required=""
-                        placeholder="Username">
+                        placeholder="email"
+                        formControlName="email"
+                        >
                     </div>
                 </div>
                 <div class="form-group">
@@ -30,7 +34,9 @@
                         <input class="form-control"
                         type="password"
                         required=""
-                        placeholder="Password">
+                        placeholder="Password"
+                        formControlName="password"
+                        >
                     </div>
                 </div>
                 <div class="form-group row">
@@ -42,7 +48,8 @@
                             <input id="checkbox-signup"
                                     type="checkbox"
                                     class="filled-in
-                                    chk-col-light-blue">
+                                    chk-col-light-blue"
+                                    formControlName="remember">
                             <label for="checkbox-signup"> Remember me </label>
                         </div>
                         <a href="javascript:void(0)"
@@ -87,7 +94,7 @@
                 </div>
                 <div class="form-group m-b-0">
                     <div class="col-sm-12 text-center">
-                        Don't have an account? 
+                        Don't have an account?
                         <a  routerLink="/register"
                             class="text-primary m-l-5">
                         <b>Sign Up</b>
@@ -95,15 +102,15 @@
                     </div>
                 </div>
             </form>
-            <form 
-                class="form-horizontal" 
-                id="recoverform" 
+            <form
+                class="form-horizontal"
+                id="recoverform"
                 action="index.html">
                 <div class="form-group ">
                     <div class="col-xs-12">
                         <h3>Recover Password</h3>
                         <p class="text-muted">
-                            Enter your Email and instructions will be sent to you! 
+                            Enter your Email and instructions will be sent to you!
                         </p>
                     </div>
                 </div>
