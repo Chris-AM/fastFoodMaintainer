@@ -3,7 +3,8 @@ import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment.electron';
 import { registerInterface } from './register/register.interface';
 import { LoginInterface } from './login/login.interface';
-import { tap } from 'rxjs';
+import { Observable, of,  } from 'rxjs';
+import { map, tap, catchError } from 'rxjs/operators';
 
 const base_url = environment.base_url;
 
@@ -34,5 +35,26 @@ export class AuthService {
           error: (err) => console.log('tap error', err),
         })
       );
+  }
+
+  validateToken(): Observable<boolean> {
+    const token = localStorage.getItem('token') || '';
+    return this.httpClient
+      .get(`${base_url}/auth/refresh`, {
+        headers: {
+          'x-token': token
+        }
+    }).pipe(
+      tap({
+        next: (resp:any) => localStorage.setItem('token', resp.token)
+      }),
+      map(resp => true),
+      catchError(error => of(false)),
+    );
+  }
+
+  logout() {
+    localStorage.removeItem('token');
+    
   }
 }

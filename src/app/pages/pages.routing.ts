@@ -10,11 +10,13 @@ import { ProductComponent } from './product/product.component';
 import { TestComponent } from './hidden/test.component';
 import { UsersComponent } from './users/users.component';
 import { AccountSettingsComponent } from './account-settings/account-settings.component';
+import { AuthGuard } from '../auth/auth.guard';
 
 const routes: Routes = [
   {
     path: 'dashboard',
     component: PagesComponent,
+    canActivate: [ AuthGuard ],
     children: [
       { path: '', component: DashboardComponent },
       { path: 'daily-sales', component: DailySalesComponent },
