@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import * as _ from 'lodash';
 
-import { AccountSettingsService } from '../services/account-settings.service';
+import { AccountSettingsService } from './account-settings.service';
 import { MESSAGES } from 'src/app/shared/global-messages';
 
 @Component({
