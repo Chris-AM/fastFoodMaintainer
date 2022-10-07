@@ -1,10 +1,12 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable, of,  } from 'rxjs';
+import { map, tap, catchError } from 'rxjs/operators';
+import { Router } from '@angular/router';
+
 import { environment } from 'src/environments/environment.electron';
 import { registerInterface } from './register/register.interface';
 import { LoginInterface } from './login/login.interface';
-import { Observable, of,  } from 'rxjs';
-import { map, tap, catchError } from 'rxjs/operators';
 
 const base_url = environment.base_url;
 
@@ -13,7 +15,10 @@ const base_url = environment.base_url;
 })
 export class AuthService {
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(
+    private httpClient: HttpClient,
+    private router: Router,
+  ) { }
 
   createUser(formData: registerInterface) {
     return this.httpClient
@@ -55,6 +60,6 @@ export class AuthService {
 
   logout() {
     localStorage.removeItem('token');
-    
+    this.router.navigateByUrl('/login');
   }
 }
