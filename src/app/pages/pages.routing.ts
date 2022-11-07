@@ -7,26 +7,46 @@ import { MenuComponent } from './menu/menu.component';
 import { OrderComponent } from './order/order.component';
 import { PagesComponent } from './pages.component';
 import { ProductComponent } from './product/product.component';
-import { TestComponent } from './hidden/test.component';
 import { UsersComponent } from './users/users.component';
 import { AccountSettingsComponent } from './account-settings/account-settings.component';
 import { AuthGuard } from '../auth/auth.guard';
+import { UserProfileComponent } from './user-profile/user-profile.component';
 
 const routes: Routes = [
   {
     path: 'dashboard',
     component: PagesComponent,
-    canActivate: [ AuthGuard ],
+    canActivate: [AuthGuard],
     children: [
-      { path: '', component: DashboardComponent },
-      { path: 'daily-sales', component: DailySalesComponent },
-      { path: 'ingredients', component: IngredientComponent },
-      { path: 'menus', component: MenuComponent },
-      { path: 'orders', component: OrderComponent },
-      { path: 'products', component: ProductComponent },
-      { path: 'users', component: UsersComponent },
-      { path: 'test', component: TestComponent },
-      { path: 'account-settings', component: AccountSettingsComponent }
+      { path: '', component: DashboardComponent, data: { title: 'Dashboard' } },
+      {
+        path: 'daily-sales',
+        component: DailySalesComponent,
+        data: { title: 'ventas diarias' },
+      },
+      {
+        path: 'ingredients',
+        component: IngredientComponent,
+        data: { title: 'ingredientes' },
+      },
+      { path: 'menus', component: MenuComponent, data: { title: 'menus' } },
+      { path: 'orders', component: OrderComponent, data: { title: 'pedidos' } },
+      {
+        path: 'products',
+        component: ProductComponent,
+        data: { title: 'productos' },
+      },
+      { path: 'users', component: UsersComponent, data: { title: 'usuarios' } },
+      {
+        path: 'account-settings',
+        component: AccountSettingsComponent,
+        data: { title: 'configuaraciones' },
+      },
+      {
+        path: 'user-profile',
+        component: UserProfileComponent,
+        data: { title: 'perfil' },
+      },
     ],
   },
 ];
