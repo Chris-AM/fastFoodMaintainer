@@ -4,7 +4,7 @@ import { Observable, of } from 'rxjs';
 import { map, tap, catchError } from 'rxjs/operators';
 import { Router } from '@angular/router';
 
-import { environment } from 'src/environments/environment.electron';
+import { environment } from 'src/environments/environment';
 import { registerInterface } from './register/register.interface';
 import { LoginInterface } from './login/login.interface';
 import { User } from '../models/user.model';

@@ -1,4 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
+#themecolors .selector, .logout{
+  cursor: pointer;
+}
 
 .animated {
   -webkit-animation-duration: 1s;
@@ -26,4 +29,8 @@
 
 .fadeIn {
   animation-name: fadeIn;
+}
+
+.avatar-previsualization{
+  width: 8rem;
 }
