@@ -7,10 +7,9 @@ export class SidebarService {
 
   menu: any[] = [
     {
-      title: 'Dashboard',
-      icon: 'mdi mdi-gauge',
+      title: 'Mantenedor',
+      icon: 'mdi mdi-folder-lock-open',
       submenu: [
-        { title: 'Dashboard', url: '/' },
         { title: 'Ingredientes', url: 'ingredients' },
         { title: 'Productos', url: 'products' },
         { title: 'Menus', url: 'menus' },
