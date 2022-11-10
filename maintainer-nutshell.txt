@@ -1,0 +1,62 @@
+<div class="row animated fadeIn fast">
+  <div class="col-12">
+    <div class="card">
+      <div class="card-body">
+        <input
+          id="searchBar"
+          type="text"
+          class="form-control"
+          placeholder="{{ search }}"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row animated fadeIn fast">
+  <div class="col-12">
+    <div class="alert alert-info text-center">
+      <h4 class="alert-heading">
+        {{ loading }}
+      </h4>
+      <i class="fa fa-spin fa-refresh fa-2x"></i>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-12">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">{{ title }}</h4>
+            <h6 class="card-subtitle"> {{ admins }} </h6>
+            <div class="table-responsive">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>{{avatar}}</th>
+                            <th>{{name}}</th>
+                            <th>{{email}}</th>
+                            <th class="text-nowrap">{{actions}}</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                          <td>Lunar probe project</td>
+                          <td>Lunar probe project</td>
+                          <td>Lunar probe project</td>
+                            <td class="text-nowrap">
+                                <a href="#" data-toggle="tooltip" data-original-title="Edit"> <i class="fa fa-pencil text-inverse m-r-10"></i> </a>
+                                <a href="#" data-toggle="tooltip" data-original-title="Delete"> <i class="fa fa-close text-danger"></i> </a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="next-prev-buttons-container">
+              <button class="btn btn-secondary"> {{ prev }} </button>
+              <button class="btn btn-secondary"> {{ next }} </button>
+            </div>
+        </div>
+    </div>
+  </div>
+</div>
