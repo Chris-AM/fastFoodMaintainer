@@ -1,5 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
-#themecolors .selector, .logout{
+#themecolors .selector,
+.logout {
   cursor: pointer;
 }
 
@@ -31,6 +32,12 @@
   animation-name: fadeIn;
 }
 
-.avatar-previsualization{
+.avatar-previsualization {
   width: 8rem;
+}
+
+.next-prev-buttons-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
 }

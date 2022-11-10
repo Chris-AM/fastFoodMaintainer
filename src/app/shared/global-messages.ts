@@ -6,7 +6,7 @@ export const MESSAGES = {
     MENUS: 'Menus',
     ORDERS: 'Ordenes',
     SALES: 'Ventas/Cierre',
-    USERS: 'Administrar Usuarios'
+    USERS: 'Administrar Usuarios',
   },
   DAILY_SALES: {
     TODAY_SALES: 'Ventas del día de hoy',
@@ -15,4 +15,19 @@ export const MESSAGES = {
   ACCOUNT_SETTINGS: {
     SELECT: 'Seleccione un tema',
   },
-}
+  USERS: {
+    SEARCH: 'Buscar Usuario...',
+    LOADING: 'Cargando...',
+    TITLE: 'Administración de usuarios',
+    ADMINS: 'Usuarios de Mantenedor',
+    APP: 'Usuarios de Aplicación',
+    TABLE: {
+      AVATAR: 'Avatar',
+      NAME: 'Nombre',
+      EMAIL: 'Correo Electrónico',
+      ACTIONS: 'Acciones',
+    },
+    PREV: 'Anterior',
+    NEXT: 'Siguiente',
+  },
+};
