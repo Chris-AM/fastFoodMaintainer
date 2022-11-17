@@ -10,11 +10,11 @@ import { UsersService } from './users.service';
 export class UsersComponent implements OnInit {
   public totalUsers: number = 0;
   public users: User[] = [];
-
+  public isLoadingSpinner = true;
   public search = '';
   public loading = '';
   public title = '';
-  public total = ''
+  public total = '';
   public admins = '';
   public app = '';
   public avatar = '';
@@ -41,12 +41,14 @@ export class UsersComponent implements OnInit {
   //TODO: After MVP sort users by Admin and APP
 
   public getUsers() {
+    this.isLoadingSpinner = true;
     this.usersService.loadUsers(this.limit, this.page).subscribe({
       next: ({ totalDocs, docs, hasNextPage, hasPrevPage }) => {
         this.hasPrevPage = hasPrevPage;
         this.hasNextPage = hasNextPage;
         this.totalUsers = totalDocs;
         this.users = docs;
+        this.isLoadingSpinner = false;
       },
     });
   }
