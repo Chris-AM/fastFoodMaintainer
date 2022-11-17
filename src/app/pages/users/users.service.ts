@@ -4,7 +4,6 @@ import { map } from 'rxjs/operators';
 import { environment } from '../../../environments/environment';
 import { LoadUsers } from './users-loading.interface';
 import { User } from '../../models/user.model';
-import { AuthService } from 'src/app/auth/auth.service';
 
 const url_base = environment.base_url;
 
@@ -28,8 +27,7 @@ export class UsersService {
     const url = `${url_base}/user?limit=${limit}&page=${page}`;
     return this.httpClient.get<LoadUsers>(url).pipe(
       map((response) => {
-        console.log('🚀 debug response ===>', response.docs);
-        const users =  response.docs.map(
+        const users = response.docs.map(
           (user) =>
             new User(
               user.name,
