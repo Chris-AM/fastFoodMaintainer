@@ -1,11 +1,16 @@
 import { Component, OnInit } from '@angular/core';
+import { User } from 'src/app/models/user.model';
 import { MESSAGES } from 'src/app/shared/global-messages';
+import { UsersService } from './users.service';
 
 @Component({
   selector: 'app-users',
   templateUrl: './users.component.html',
 })
 export class UsersComponent implements OnInit {
+  public totalUsers: number = 0;
+  public users: User[] = [];
+
   public search = '';
   public loading = '';
   public title = '';
@@ -18,12 +23,21 @@ export class UsersComponent implements OnInit {
   public prev = '';
   public next = '';
 
-  constructor() {}
+  constructor(private readonly usersService: UsersService) {}
 
   ngOnInit(): void {
     this.getMessages();
+    this.getUsers();
   }
 
+  public getUsers() {
+    this.usersService.loadUsers().subscribe({
+      next: ({ totalDocs, docs }) => {
+        this.totalUsers = totalDocs;
+        this.users = docs;
+      },
+    });
+  }
   public getMessages() {
     this.search = MESSAGES.USERS.SEARCH;
     this.loading = MESSAGES.USERS.LOADING;
