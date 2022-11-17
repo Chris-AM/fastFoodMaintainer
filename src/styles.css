@@ -41,3 +41,13 @@
   flex-direction: row;
   justify-content: space-around;
 }
+
+.w100 {
+  width: 5rem;
+}
+
+.avatarsInList {
+  border: .1rem solid grey;
+  border-radius: 100%;
+  width: 3.5rem;
+}

@@ -1,7 +1,10 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { map } from 'rxjs/operators';
 import { environment } from '../../../environments/environment';
 import { LoadUsers } from './users-loading.interface';
+import { User } from '../../models/user.model';
+import { AuthService } from 'src/app/auth/auth.service';
 
 const url_base = environment.base_url;
 
@@ -23,6 +26,32 @@ export class UsersService {
 
   loadUsers(limit: number = 5, page: number = 1) {
     const url = `${url_base}/user?limit=${limit}&page=${page}`;
-    return this.httpClient.get<LoadUsers>(url);
+    return this.httpClient.get<LoadUsers>(url).pipe(
+      map((response) => {
+        console.log('🚀 debug response ===>', response.docs);
+        const users =  response.docs.map(
+          (user) =>
+            new User(
+              user.name,
+              user.email,
+              '',
+              0,
+              '',
+              '',
+              user.role,
+              '',
+              false,
+              false,
+              user.avatar
+            )
+        );
+        return {
+          totalDocs: response.totalDocs,
+          docs: users,
+          hasNextPage: response.hasNextPage,
+          hasPrevPage: response.hasPrevPage,
+        };
+      })
+    );
   }
 }

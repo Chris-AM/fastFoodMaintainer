@@ -35,16 +35,18 @@
           <table class="table table-bordered">
             <thead>
               <tr>
-                <th>{{ avatar }}</th>
+                <th class="w100" >{{ avatar }}</th>
                 <th>{{ name }}</th>
                 <th>{{ email }}</th>
-                <th>{{ role }}</th>
-                <th class="text-nowrap">{{ actions }}</th>
+                <th class="w100" >{{ role }}</th>
+                <th class="text-nowrap w100">{{ actions }}</th>
               </tr>
             </thead>
             <tbody>
               <tr *ngFor="let user of users">
-                <td>NOT YET</td>
+                <td >
+                  <img class="avatarsInList" [src]="user.avatarUrl" alt="fsdf">
+                </td>
                 <td>{{ user.name }}</td>
                 <td>{{ user.email }}</td>
                 <td>
