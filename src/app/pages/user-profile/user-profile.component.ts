@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from 'src/app/auth/auth.service';
 import { User } from 'src/app/models/user.model';
-import { UploadImagesService } from 'src/app/shared/upload-images.service';
+import { UploadImagesService } from 'src/app/shared/shared-services/upload-images.service';
 import Swal from 'sweetalert2';
 
 @Component({
