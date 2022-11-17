@@ -26,37 +26,64 @@
 <div class="row">
   <div class="col-12">
     <div class="card">
-        <div class="card-body">
-            <h4 class="card-title">{{ title }} [{{totalUsers}}] </h4>
-            <h6 class="card-subtitle"> {{ admins }} </h6>
-            <div class="table-responsive">
-                <table class="table table-bordered">
-                    <thead>
-                        <tr>
-                            <th>{{avatar}}</th>
-                            <th>{{name}}</th>
-                            <th>{{email}}</th>
-                            <th class="text-nowrap">{{actions}}</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr *ngFor="let user of users">
-                          <td>NOT YET</td>
-                          <td> {{user.name}} </td>
-                          <td> {{user.email}} </td>
-                            <td class="text-nowrap">
-                                <a href="#" data-toggle="tooltip" data-original-title="Edit"> <i class="fa fa-pencil text-inverse m-r-10"></i> </a>
-                                <a href="#" data-toggle="tooltip" data-original-title="Delete"> <i class="fa fa-close text-danger"></i> </a>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            <div class="next-prev-buttons-container">
-              <button class="btn btn-secondary"> {{ prev }} </button>
-              <button class="btn btn-secondary"> {{ next }} </button>
-            </div>
+      <div class="card-body">
+        <h4 class="card-title">
+          {{ title }} [{{ totalUsers }}] {{total}}
+        </h4>
+        <h6 class="card-subtitle">{{ usersST }}</h6>
+        <div class="table-responsive">
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th>{{ avatar }}</th>
+                <th>{{ name }}</th>
+                <th>{{ email }}</th>
+                <th>{{ role }}</th>
+                <th class="text-nowrap">{{ actions }}</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let user of users">
+                <td>NOT YET</td>
+                <td>{{ user.name }}</td>
+                <td>{{ user.email }}</td>
+                <td>
+                  <span *ngIf="user.role[0] === 'admin'" class="label label-success">{{ user.role }}</span>
+                  <span *ngIf="user.role[0] === 'user'" class="label label-info">{{ user.role }}</span>
+                </td>
+                <td class="text-nowrap">
+                  <a href="#" data-toggle="tooltip" data-original-title="Edit">
+                    <i class="fa fa-pencil text-inverse m-r-10"></i>
+                  </a>
+                  <a
+                    href="#"
+                    data-toggle="tooltip"
+                    data-original-title="Delete"
+                  >
+                    <i class="fa fa-close text-danger"></i>
+                  </a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
         </div>
+        <div class="next-prev-buttons-container">
+          <button
+            (click)="changePage(-1)"
+            [disabled]="!hasPrevPage"
+            class="btn btn-secondary"
+          >
+            {{ prev }}
+          </button>
+          <button
+            (click)="changePage(1)"
+            [disabled]="!hasNextPage"
+            class="btn btn-secondary"
+          >
+            {{ next }}
+          </button>
+        </div>
+      </div>
     </div>
   </div>
 </div>

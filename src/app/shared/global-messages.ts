@@ -19,6 +19,7 @@ export const MESSAGES = {
     SEARCH: 'Buscar Usuario...',
     LOADING: 'Cargando...',
     TITLE: 'Administración de usuarios',
+    TOTAL: 'usuarios en total',
     ADMINS: 'Usuarios de Mantenedor',
     APP: 'Usuarios de Aplicación',
     TABLE: {
@@ -26,6 +27,7 @@ export const MESSAGES = {
       NAME: 'Nombre',
       EMAIL: 'Correo Electrónico',
       ACTIONS: 'Acciones',
+      ROLE: 'Rol',
     },
     PREV: 'Anterior',
     NEXT: 'Siguiente',

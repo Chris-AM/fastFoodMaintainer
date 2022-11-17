@@ -21,9 +21,8 @@ export class UsersService {
   }
   constructor(private readonly httpClient: HttpClient) {}
 
-  loadUsers(limit: number = 5) {
-    const url = `${url_base}/user?limit=${limit}`;
-    console.log('🚀 debug headers', this.headers);
+  loadUsers(limit: number = 5, page: number = 1) {
+    const url = `${url_base}/user?limit=${limit}&page=${page}`;
     return this.httpClient.get<LoadUsers>(url);
   }
 }
