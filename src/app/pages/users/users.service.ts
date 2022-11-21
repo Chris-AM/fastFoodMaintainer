@@ -23,7 +23,7 @@ export class UsersService {
   }
   constructor(private readonly httpClient: HttpClient) {}
 
-  loadUsers(limit: number = 5, page: number = 1) {
+  loadUsers(limit: number = 10, page: number = 1) {
     const url = `${url_base}/user?limit=${limit}&page=${page}`;
     return this.httpClient.get<LoadUsers>(url).pipe(
       map((response) => {
@@ -35,7 +35,7 @@ export class UsersService {
               '',
               0,
               '',
-              '',
+              user.id,
               user.role,
               '',
               false,
@@ -51,5 +51,11 @@ export class UsersService {
         };
       })
     );
+  }
+
+  deleteUser(user: User) {
+    console.log('🚀 debug user id', user.id);
+    const url = `${url_base}/user/${user.id}`;
+    return this.httpClient.delete(url);
   }
 }

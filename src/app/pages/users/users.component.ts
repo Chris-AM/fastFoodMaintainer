@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from 'src/app/models/user.model';
 import { MESSAGES } from 'src/app/shared/global-messages';
+import Swal from 'sweetalert2';
 import { UsersService } from './users.service';
 
 @Component({
@@ -24,7 +25,7 @@ export class UsersComponent implements OnInit {
   public role = '';
   public prev = '';
   public next = '';
-  public limit = 5;
+  public limit = 10;
   public page = 1;
   public hasNextPage = false;
   public hasPrevPage = false;
@@ -62,6 +63,27 @@ export class UsersComponent implements OnInit {
       this.page -= page;
     }
     this.getUsers();
+  }
+
+  public deleteUser(user: User) {
+    Swal.fire({
+      text: MESSAGES.USERS.SWAL_DELETE.TEXT,
+      icon: 'warning',
+      titleText: MESSAGES.USERS.SWAL_DELETE.TITLE_TEXT + user.name,
+      showCancelButton: true,
+      confirmButtonColor: MESSAGES.USERS.SWAL_DELETE.CONFIRM_BUTTON_COLOR,
+      cancelButtonColor: MESSAGES.USERS.SWAL_DELETE.CANCEL_BUTTON_COLOR,
+      confirmButtonText: MESSAGES.USERS.SWAL_DELETE.CONFIRM_BUTTON_TEXT,
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.usersService.deleteUser(user).subscribe({
+          next: (resp: any) => {
+            Swal.fire(user.name, resp.message, 'success');
+            this.getUsers();
+          },
+        });
+      }
+    });
   }
 
   public getMessages() {
