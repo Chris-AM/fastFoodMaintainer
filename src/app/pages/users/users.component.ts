@@ -49,6 +49,7 @@ export class UsersComponent implements OnInit {
         this.hasNextPage = hasNextPage;
         this.totalUsers = totalDocs;
         this.users = docs;
+        console.log('🚀 debug users', this.users);
         this.isLoadingSpinner = false;
       },
     });

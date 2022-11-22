@@ -10,6 +10,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { SharedModule } from '../shared/shared.module';
 import { ComponentsModule } from '../components/components.module';
 
+//pipes
+import { PipesModule } from '../pipes/pipes.module';
+
 //components
 import { IngredientComponent } from './ingredient/ingredient.component';
 import { ProductComponent } from './product/product.component';
@@ -58,7 +61,8 @@ import { AuthModule } from '../auth/auth.module';
     ComponentsModule,
     NgChartsModule,
     HttpClientModule,
-    AuthModule
+    AuthModule,
+    PipesModule
   ],
 })
 export class PagesModule {}

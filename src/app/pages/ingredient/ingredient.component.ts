@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Ingredient } from 'src/app/models/ingredients.model';
 import { IngredientService } from './ingredient.service';
 
 @Component({
@@ -8,14 +9,17 @@ import { IngredientService } from './ingredient.service';
 export class IngredientComponent implements OnInit {
   constructor(private ingredientService: IngredientService) {}
 
-  ngOnInit( ): void {
+  public ingredients: Ingredient[] = [];
+
+  ngOnInit(): void {
     this.getIngredients();
   }
 
   getIngredients() {
     return this.ingredientService.getIngredients().subscribe({
-      next: (ingredients) => {
-        console.log('debug ingredients', ingredients);
+      next: (ingredients: Ingredient[]) => {
+        this.ingredients = ingredients;
+        console.log('🚀 debug ingredients', this.ingredients);
       },
     });
   }

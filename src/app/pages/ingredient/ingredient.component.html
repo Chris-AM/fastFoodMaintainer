@@ -1,15 +1,32 @@
 <h1>Ingredientes</h1>
-<hr>
+<hr />
 
-<div class="card-columns">
-
-  <div class="card">
-    <img src="..." class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+<div class="row">
+  <!-- Column -->
+  <div class="col-lg-4" *ngFor="let ingredient of ingredients">
+    <div class="card">
+      <img
+        [src]="ingredient.image | images: 'ingredient'"
+        alt="Ingredient"
+        srcset=""
+      />
+      <div class="card-body">
+        <ul class="list-inline font-14">
+          <li class="p-l-0">Departamento</li>
+          <li>
+            {{ ingredient.type }}
+          </li>
+        </ul>
+        <h3 class="font-normal">{{ ingredient.name }}</h3>
+        <p class="m-b-0 m-t-10">
+          {{ ingredient.description }}
+        </p>
+        <button
+          class="btn btn-success btn-rounded waves-effect waves-light m-t-20"
+        >
+          Read more
+        </button>
+      </div>
     </div>
   </div>
-
 </div>

@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../../environments/environment';
+import { Ingredient } from 'src/app/models/ingredients.model';
 
 const base_url = environment.base_url;
 
@@ -8,9 +9,11 @@ const base_url = environment.base_url;
   providedIn: 'root',
 })
 export class IngredientService {
+  public ingredient: Ingredient;
   constructor(private httpClient: HttpClient) {}
 
   getIngredients() {
-    return this.httpClient.get(`${base_url}/ingredient`);
+    const url = `${base_url}/ingredient`;
+    return this.httpClient.get(url);
   }
 }
