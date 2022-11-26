@@ -9,7 +9,7 @@ const base_url = environment.base_url;
 export class ImagesPipe implements PipeTransform {
   transform(
     image: string,
-    type: 'users' | 'ingredient' | 'drinks' | 'products' | 'menus'
+    type: 'users' | 'ingredient' | 'drinks' | 'product' | 'menu'
   ): string {
    
       if (image) {

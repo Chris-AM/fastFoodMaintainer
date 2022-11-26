@@ -1,1 +1,26 @@
-<p>menu works!</p>
+<h1>Menus</h1>
+<hr />
+
+<div class="row">
+  <!-- Column -->
+  <div class="col-lg-4" *ngFor="let menu of menus">
+    <div class="card">
+      <img
+        [src]="menu.photo| images: 'menu'"
+        alt="Ingredient"
+        srcset=""
+      />
+      <div class="card-body">
+        <h3 class="font-normal">{{ menu.name }}</h3>
+        <p class="m-b-0 m-t-10">
+          {{ menu.description }} {{menu.price |  currency:'$' }}
+        </p>
+        <button
+          class="btn btn-success btn-rounded waves-effect waves-light m-t-20"
+        >
+          Read more
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
