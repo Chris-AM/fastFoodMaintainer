@@ -1,6 +1,6 @@
 {
-    "/api": {
-        "target": "http://ec2-18-208-110-224.compute-1.amazonaws.com/",
-        "secure": false
-    }
+  "/api": {
+    "target": "http://ec2-18-208-110-224.compute-1.amazonaws.com/",
+    "secure": false
+  }
 }
